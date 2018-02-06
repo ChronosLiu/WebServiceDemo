@@ -1,0 +1,125 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>me.chronosliu </groupId>
+  <artifactId>WebServiceDemo</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>WebServiceDemo Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <cxf.version>3.1.7</cxf.version>  
+        <spring.version>4.3.7.RELEASE</spring.version>  
+        <jackson.version>1.9.13</jackson.version>
+        <servlet.version>3.1.0</servlet.version>
+        <jspapi.version>2.2</jspapi.version>
+   </properties>
+	 
+  <dependencies>
+	 
+  	<!-- 测试 -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+     <!-- spring start -->
+    <dependency>		<!-- spring核心工具包 -->
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-core</artifactId>
+    	<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-context</artifactId>
+    	<version>${spring.version}</version>
+	</dependency>
+	<dependency>		<!-- springIOC基础实现 -->
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-beans</artifactId>
+    	<version>${spring.version}</version>
+	</dependency>
+	<dependency>		<!-- spring web相关核心 -->
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-web</artifactId>
+    	<version>${spring.version}</version>
+	</dependency>
+	<dependency>	<!-- spring mvc 相关 -->
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-webmvc</artifactId>
+    	<version>${spring.version}</version>
+	</dependency>
+	 <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-aop</artifactId>
+         <version>${spring.version}</version>
+     </dependency>
+    <!-- spring end -->
+    <dependency>
+    	<groupId>javax.servlet</groupId>
+    	<artifactId>javax.servlet-api</artifactId>
+    	<version>${servlet.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>javax.servlet.jsp</groupId>
+		<artifactId>jsp-api</artifactId>
+		<version>${jspapi.version}</version>
+	</dependency>
+	<!-- cxf start -->
+   	<dependency>   <!--cxf-rt-frontend-jaxws支持soap类型服务-->
+    	<groupId>org.apache.cxf</groupId>
+    	<artifactId>cxf-rt-frontend-jaxws</artifactId>
+    	<version>${cxf.version}</version>
+	</dependency>
+	<dependency>   <!--cxf-rt-frontend-jaxrs支持rest服务-->
+	    <groupId>org.apache.cxf</groupId>
+	    <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+	    <version>3.0.5</version>
+	</dependency>
+	<dependency>    <!--cxf客户端-->
+	    <groupId>org.apache.cxf</groupId>
+	    <artifactId>cxf-rt-rs-client</artifactId>
+	    <version>${cxf.version}</version>
+	</dependency> 
+	<dependency>
+	    <groupId>javax.ws.rs</groupId>
+	    <artifactId>jsr311-api</artifactId>
+	    <version>1.1.1</version>
+	</dependency> 
+   	<!-- cxf end -->
+   	<!-- JSON start -->
+	<dependency>
+	    <groupId>com.alibaba</groupId>
+	    <artifactId>fastjson</artifactId>
+	    <version>1.2.31</version>
+	</dependency>
+	 <dependency>
+	    <groupId>com.fasterxml.jackson.jaxrs</groupId>
+	    <artifactId>jackson-jaxrs-json-provider</artifactId>
+	    <version>2.6.3</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.codehaus.jackson</groupId>
+	    <artifactId>jackson-jaxrs</artifactId>
+	    <version>${jackson.version}</version>
+	</dependency> 
+	<!-- JSON end -->
+  </dependencies>
+  <build>
+    <finalName>WebServiceDemo</finalName>
+  	<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>  <!-- “编码 GBK 的不可映射字符”问题的解决 -->
+                </configuration>
+            </plugin>
+  	</plugins>
+  </build>
+</project>
